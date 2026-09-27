@@ -1,3 +1,5 @@
+//Creates a back to top button that appears when the page is scrolled down 200px
+
 document.addEventListener("DOMContentLoaded", function() {
     // Create the button element
     const backToTopBtn = document.createElement("button");

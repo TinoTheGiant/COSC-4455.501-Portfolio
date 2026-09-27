@@ -1,3 +1,5 @@
+// Creates a greeting popup that appears when the page loads
+
 document.addEventListener("DOMContentLoaded", function() {
     // Check if greeting has already been shown in this session
     if (sessionStorage.getItem("greetingShown")) {
