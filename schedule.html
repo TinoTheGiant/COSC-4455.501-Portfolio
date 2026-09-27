@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <title>Portfolio - Schedule</title>
+</head>
+<body>
+    <header>
+        <h1>Tino Kaseke</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid p-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="projects.html">Projects</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link active" aria-current="page" href="schedule.html">Schedule</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <main>
+        <section class="schedule-section">
+            <h1 class="page-title">Schedule</h1>
+            <!-- This schedule table is styled using Bootstrap and custome CSS -->
+            <!-- The table is wrapped in a responsive div to allow it to shrink on mobile devices -->
+            <div class="table-responsive-md">
+                <table class="table">
+                <caption>Class Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Course Number</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Multimedia & Web</td>
+                        <td>COSC 4455</td>
+                        <td>05:40 PM - 06:55 PM TR</td>
+                        <td>ROOM: ENG 3214</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Distributed Database Systems</td>
+                        <td>COSC 6315</td>
+                        <td>05:40 PM - 06:55 PM MW</td>
+                        <td>ROOM: ENG 1212</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Quantum Computing and Networking</td>
+                        <td>COSC 6389</td>
+                        <td>07:05 PM - 09:35 PM R</td>
+                        <td>ROOM: ENG 1212</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+              <!--This section is for future projects represented as a embedded video and is displayed in a responsive div -->
+              <div class="mt-5 pt-4">
+                <h2 class="page-title fs-2 mb-4 text-center">Sample COSC 6315 Project</h2>
+                <div class="mx-auto shadow-lg rounded-4 overflow-hidden bg-dark" style="max-width: 800px;">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/YS9rl8KG_8Y?si=2baJhKmHovftvYHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+    </main>
+    <footer class="footer">
+    <p>&copy; Tino Kaseke 2026. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>
