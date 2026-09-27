@@ -237,6 +237,42 @@ Mobile: below 768px — 1 column*/
   background-color: #0B192F;
 }
 
+/* Skills container */
+.skills {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed rgba(205, 255, 3, 0.3);
+}
+
+/* Skills list grid layout */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background-color: #112240;
+    color: #CDFF03;
+    border: 1px solid #CDFF03;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(205, 255, 3, 0.2);
+    color: white;
+}
+
 /* about page mobile and tablet styles Desktop: 993px and above — multiple columns
 Tablet: 768px–992px — 2 columns
 Mobile: below 768px — 1 column*/
@@ -259,6 +295,14 @@ Mobile: below 768px — 1 column*/
     .fitness-image-gallery {
         grid-template-columns: 90px;
         justify-content: center;
+    }
+    .skills-grid {
+        justify-content: center;
+        gap: 10px;
+    }
+    .skill-item {
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
 }
 
@@ -588,4 +632,90 @@ Mobile: below 768px — 1 column*/
     td:nth-of-type(3)::before { content: "Time"; }
     td:nth-of-type(4)::before { content: "Location"; }
     td:nth-of-type(5)::before { content: "Credits"; }
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 24px;
+    border: 2px solid #0B192F;
+    outline: none;
+    background-color: #CDFF03;
+    color: #0B192F;
+    cursor: pointer;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Slightly rounded square */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0; /* managed by JS for fade effect */
+}
+
+#backToTopBtn:hover {
+    background-color: white;
+    color: #0B192F;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(205, 255, 3, 0.4);
+}
+
+/* Mobile view for Back to Top Button */
+@media (max-width: 768px) {
+    #backToTopBtn {
+        bottom: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+}
+
+/* Greeting Popup */
+#greeting-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #112240;
+    color: white;
+    border: 2px solid #CDFF03;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    opacity: 0;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+    width: max-content;
+    max-width: 90vw;
+}
+
+#greeting-popup strong {
+    color: #CDFF03;
+}
+
+#greeting-popup.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* Mobile view for Greeting Popup */
+@media (max-width: 768px) {
+    #greeting-popup {
+        width: 85vw; /* Use viewport width instead of % to be safe */
+        font-size: 0.95rem;
+        padding: 12px 10px;
+        top: 15px; /* Slightly higher on mobile */
+    }
 }
