@@ -21,15 +21,15 @@ p, a, li{
     font-style: Normal;
 }
 
-a{
+a, .navbar-nav .nav-link {
     text-decoration: none;
-    color: #CDFF03;
+    color: #CDFF03 !important;
     margin: 10px;
     text-transform: uppercase;
 }
 
-a:hover{
-    color: white;
+a:hover, .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus, .navbar-nav .nav-link.active {
+    color: white !important;
     transition: 0.5s ease-in-out;
 }
 
@@ -58,10 +58,15 @@ body{
   margin: 0 auto;
 }
 
+main {
+    min-height: calc(100vh - 74px);
+}
+
 
 /* Home page styles */
 /* Hero Section Styles */
 .hero {
+    box-sizing: border-box;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -84,11 +89,16 @@ body{
     letter-spacing: 2px;
 }
 
+.hero-subtitle {
+    color: rgba(205, 255, 3, 0.7); 
+}
+
 .about-summary {
     padding: 60px 40px;
     text-align: center;
     background-color: #0B192F;
     margin: 20px 40px;
+    box-sizing: border-box;
 }
 
 .about-summary h2 {
@@ -131,6 +141,48 @@ footer{
   background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  
   background: linear-gradient(to right, #182848, #4b6cb7); 
 }
+
+/* home page mobile and tablet styles Desktop: 993px and above — multiple columns
+Tablet: 768px–992px — 2 columns
+Mobile: below 768px — 1 column*/
+
+/* Tablet view */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        overflow-x: auto;
+    }
+    .hero {
+        height: auto;
+        min-height: 50vh;
+    }
+    .hero-title {
+        font-size: 3rem;
+    }
+    .about-summary {
+        margin: 10px 20px;
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .hero {
+        height: 40vh;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+
 
 /* About page Section Styles */
 .about-page {
@@ -185,6 +237,31 @@ footer{
   background-color: #0B192F;
 }
 
+/* about page mobile and tablet styles Desktop: 993px and above — multiple columns
+Tablet: 768px–992px — 2 columns
+Mobile: below 768px — 1 column*/
+
+/* Tablet view */
+@media (max-width: 992px) {
+    .about-page-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fitness-image-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .about-page-container {
+        grid-template-columns: 1fr;
+    }
+    .fitness-image-gallery {
+        grid-template-columns: 90px;
+        justify-content: center;
+    }
+}
+
 /* Projects Page Styles */
 .projects-section {
     padding: 40px 20px;
@@ -199,16 +276,17 @@ footer{
 
 .simple-image-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.grid-item {
+.grid-item, .project-card {
     background-color: #112240;
     padding: 15px;
     border: 1px solid #CDFF03;
+    color: white; /* Ensure inherited text is white */
 }
 
 .project-img {
@@ -218,7 +296,13 @@ footer{
     margin-bottom: 10px;
 }
 
-.grid-item p {
+.project-card .card-title {
+    color: #CDFF03;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.grid-item p, .project-card .card-text {
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -247,4 +331,261 @@ footer{
     font-size: 0.85rem;
     background-color: transparent;
     box-shadow: 0 0 5px rgba(93, 123, 187, 0.4);
+}
+
+/* projects page mobile and tablet styles Desktop: 993px and above — multiple columns
+Tablet: 768px–992px — 2 columns
+Mobile: below 768px — 1 column*/
+
+/* Tablet view */
+@media (max-width: 992px) {
+    .simple-image-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .simple-image-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact page styles */
+
+.contact-section{
+    background-color: #0B192F;
+    margin: 20px 40px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+legend{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #CDFF03;
+    margin: 0;
+    font-size: 2.1rem;
+}
+
+fieldset{
+    border: 2px solid #CDFF03;
+    margin: 20px 40px;
+    padding: 60px 40px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+}
+
+label, .form-label, .col-form-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #CDFF03;
+    margin: 0;
+    font-size: 1.1rem;
+    width: 120px;
+    text-align: right;
+}
+
+input, .form-control, .form-select {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #0B192F;
+    margin: 0;
+    font-size: 1.1rem;
+    width: 60%;
+    max-width: 400px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.date{
+    margin-bottom: 5px;
+    color: #0B192F;
+}
+
+textarea, textarea.form-control {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color:#0B192F;
+    margin: 0;
+    font-size: 1.1rem;
+    width: 60%;
+    max-width: 400px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+/* contact page mobile and tablet styles Desktop: 993px and above — multiple columns
+Tablet: 768px–992px — 2 columns
+Mobile: below 768px — 1 column*/
+
+/* Tablet view */
+@media (max-width: 992px) {
+    /* Content fits adequately */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 20px 0;
+        padding: 40px 0;
+    }
+    fieldset {
+        margin: 0;
+        padding: 40px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .form-group {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+    }
+    label {
+        width: 100%;
+        text-align: center;
+    }
+    input, textarea {
+        width: 100%;
+    }
+}
+
+/* schedule page styles */
+.schedule-section{
+    background-color: #0B192F;
+    margin: 20px 40px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+
+th{
+    background-color: #CDFF03;
+    color: #0B192F;
+    padding: 10px;
+    text-align: center;
+}
+
+td{
+    padding: 10px;
+    border: 1px solid #CDFF03;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: #F0FFB3;
+    color: #0B192F;
+}
+
+/* Ensure Bootstrap table class respects the custom theme */
+.table > :not(caption) > * > * {
+    background-color: transparent;
+    color: inherit;
+    box-shadow: none;
+    border-bottom-width: 0;
+}
+.table th {
+    background-color: #CDFF03;
+    color: #0B192F;
+}
+.table td {
+    border: 1px solid #CDFF03;
+}
+.table tr:nth-child(even) > * {
+    background-color: #F0FFB3;
+    color: #0B192F;
+}
+
+/* schedule page mobile and tablet styles Desktop: 993px and above — multiple columns
+Tablet: 768px–992px — 2 columns
+Mobile: below 768px — 1 column*/
+
+/* Tablet view */
+@media (max-width: 992px) {
+    .schedule-section {
+        margin: 20px 10px;
+        padding: 40px 20px;
+    }
+    /* Let the table text wrap naturally on tablet */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .schedule-section {
+        margin: 10px 0;
+        padding: 20px 10px;
+    }
+    
+    /* Convert table to 1-column card layout to prevent horizontal scroll */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        display: none;
+    }
+    
+    tr {
+        border: 2px solid #CDFF03;
+        margin-bottom: 20px;
+    }
+    
+    td {
+        border: none;
+        border-bottom: 1px dashed #CDFF03;
+        position: relative;
+        padding: 10px;
+        padding-left: 50%;
+        text-align: right;
+    }
+    
+    td:last-child {
+        border-bottom: none;
+    }
+    
+    td::before {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: inherit;
+    }
+    
+    td:nth-of-type(1)::before { content: "Course Name"; }
+    td:nth-of-type(2)::before { content: "Course Number"; }
+    td:nth-of-type(3)::before { content: "Time"; }
+    td:nth-of-type(4)::before { content: "Location"; }
+    td:nth-of-type(5)::before { content: "Credits"; }
 }

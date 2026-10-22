@@ -3,77 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    
-    <title>Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+    <title>Portfolio - Projects</title>
 </head>
 <body>
     <header>
         <h1>Tino Kaseke</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid p-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" aria-current="page" href="projects.html">Projects</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="schedule.html">Schedule</a>
+              </div>
+            </div>
+          </div>
         </nav>
     </header>
     <main>
         <section class="projects-section">
             <h1 class="page-title">Projects</h1>
+            <!-- This project section is styled using Bootstrap and custome CSS -->
+            <!-- The projects are displayed in a grid of cards -->
+<!--A modal was added using bootstrap and linked to the view more projects button -->
+            <!-- The grid is wrapped in a responsive div to allow it to shrink on mobile devices -->
             
-            <div class="simple-image-grid">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
                 <!-- Project 1: MS CS Research Project -->
-                <div class="grid-item">
-                    <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs44163-025-00788-7/MediaObjects/44163_2025_788_Fig2_HTML.png?as=webp" alt="MS CS Research Project" class="project-img">
-                    <p><abbr title="Master of Science in Computer Science">MS CS</abbr> Research: Reinforcement Learning for Dynamic Data Fragmentation and Allocation</p>
-                    <div class="simple-tags">
-                        <span>Research</span>
-                        <span>Distributed Systems</span>
-                        <span>Databases</span>
-                        <span>Reinforcement Learning</span>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs44163-025-00788-7/MediaObjects/44163_2025_788_Fig2_HTML.png?as=webp" class="card-img-top project-img" alt="MS CS Research Project">
+                        <div class="card-body">
+                            <h5 class="card-title"><abbr title="Master of Science in Computer Science">MS CS</abbr> Research</h5>
+                            <p class="card-text">Reinforcement Learning for Dynamic Data Fragmentation and Allocation</p>
+                            <div class="simple-tags">
+                                <span>Research</span>
+                                <span>Distributed Systems</span>
+                                <span>Databases</span>
+                                <span>Reinforcement Learning</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 2: App/Website -->
-                <div class="grid-item">
-                    <img src="images/Project1.png" alt="Sports Analytics Website" class="project-img">
-                    <p>Web App: Sports Analytics Website</p>
-                    <div class="simple-tags">
-                        <span>Spectre CSS</span>
-                        <span>Html5</span>
-                        <span>Single page web app</span>
-                        <span>Vercel</span>
-                        <span>Github</span>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="images/Project1.png" class="card-img-top project-img" alt="Sports Analytics Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Web App</h5>
+                            <p class="card-text">Sports Analytics Website</p>
+                            <div class="simple-tags">
+                                <span>Spectre CSS</span>
+                                <span>Html5</span>
+                                <span>Single page web app</span>
+                                <span>Vercel</span>
+                                <span>Github</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 3: App/Website -->
-                <div class="grid-item">
-                    <img src="/images/Project2.png" alt="CRUD Sports Informatics app" class="project-img">
-                    <p>Web App: CRUD Sports Informatics app</p>
-                    <div class="simple-tags">
-                        <span>Python</span>
-                        <span>Django</span>
-                        <span>PostgreSQL</span>
-                        <span>Docker</span>
-                        <span>Github</span>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="/images/Project2.png" class="card-img-top project-img" alt="CRUD Sports Informatics app">
+                        <div class="card-body">
+                            <h5 class="card-title">Web App</h5>
+                            <p class="card-text">CRUD Sports Informatics app</p>
+                            <div class="simple-tags">
+                                <span>Python</span>
+                                <span>Django</span>
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                                <span>Github</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 4: App/Website -->
-                <div class="grid-item">
-                    <img src="images/Project3.png" alt="Fitness Tracker API" class="project-img">
-                    <p>Web App: Club History Website</p>
-                    <div class="simple-tags">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>Netlify</span>
-                        <span>CSS</span>
-                        <span>Github</span>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="images/Project3.png" class="card-img-top project-img" alt="Fitness Tracker API">
+                        <div class="card-body">
+                            <h5 class="card-title">Web App</h5>
+                            <p class="card-text">Club History Website</p>
+                            <div class="simple-tags">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>Netlify</span>
+                                <span>CSS</span>
+                                <span>Github</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="mt-5">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#githubModal">
+                    View More Projects
+                </button>
+            </div>
+
+         
+
+            <!-- Modal -->
+            <div class="modal fade" id="githubModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-start" style="background-color: #112240; border: 1px solid #CDFF03; color: white;">
+                        <div class="modal-header" style="border-bottom-color: #CDFF03;">
+                            <h1 class="modal-title fs-5" id="githubModalLabel" style="color: #CDFF03; font-family: 'DM Sans', sans-serif;">More Projects</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="font-family: 'DM Sans', sans-serif; font-weight: 300;">
+                            To see more of my projects go to <a href="https://github.com/TinoTheGiant" target="_blank" style="color: #CDFF03; font-weight: 500; text-decoration: underline;"><i class="fa-brands fa-github" style="color: #cdff03;">&nbsp;</i>github</a>.
+                        </div>
+                        <div class="modal-footer" style="border-top-color: #CDFF03;">
+                            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
         </section>
     </main>
     <footer class="footer">
