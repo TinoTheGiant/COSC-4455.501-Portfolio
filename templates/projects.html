@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+{% endblock %}
+
+{% block content %}
+        <section class="projects-section">
+            <h1 class="page-title">Projects</h1>
+            <!-- This project section is styled using Bootstrap and custome CSS -->
+            <!-- The projects are displayed in a grid of cards -->
+<!--A modal was added using bootstrap and linked to the view more projects button -->
+            <!-- The grid is wrapped in a responsive div to allow it to shrink on mobile devices -->
+            
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <!-- Project 1: MS CS Research Project -->
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <span class="project-badge">Research Project</span>
+                        <div class="project-preview">
+                            <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs44163-025-00788-7/MediaObjects/44163_2025_788_Fig2_HTML.png?as=webp" class="project-img" alt="MS CS Research Project">
+                            <button type="button" class="project-arrow-btn" aria-label="View MS CS Research Project details" data-bs-toggle="modal" data-bs-target="#githubModal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="project-info mt-auto">
+                            <h3 class="project-title"><abbr title="Master of Science in Computer Science">MS CS</abbr> Research — Data Allocation</h3>
+                            <p class="project-description">Reinforcement Learning for Dynamic Data Fragmentation and Allocation in distributed database architectures.</p>
+                            <div class="project-tags d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill text-bg-dark project-tag">Research</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Distributed Systems</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Databases</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Reinforcement Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: App/Website -->
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <span class="project-badge">Personal Project</span>
+                        <div class="project-preview">
+                            <img src="{{ url_for('static', filename='images/Project1.png') }}" class="project-img" alt="Sports Analytics Website">
+                            <button type="button" class="project-arrow-btn" aria-label="View Sports Analytics Website details" data-bs-toggle="modal" data-bs-target="#githubModal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="project-info mt-auto">
+                            <h3 class="project-title">Sports Analytics — Performance Dashboard</h3>
+                            <p class="project-description">Single-page web analytics dashboard tracking athletic metrics with responsive lightweight layouts.</p>
+                            <div class="project-tags d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill text-bg-dark project-tag">Spectre CSS</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">HTML5</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Single Page App</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Vercel</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: App/Website -->
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <span class="project-badge">Full Stack App</span>
+                        <div class="project-preview">
+                            <img src="{{ url_for('static', filename='images/Project2.png') }}" class="project-img" alt="CRUD Sports Informatics app">
+                            <button type="button" class="project-arrow-btn" aria-label="View Sports Informatics app details" data-bs-toggle="modal" data-bs-target="#githubModal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="project-info mt-auto">
+                            <h3 class="project-title">Sports Informatics — CRUD Platform</h3>
+                            <p class="project-description">Full-stack database management and athletic records application with authentication and containerized deployment.</p>
+                            <div class="project-tags d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill text-bg-dark project-tag">Python</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Django</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">PostgreSQL</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Docker</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: App/Website -->
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <span class="project-badge">Open Source</span>
+                        <div class="project-preview">
+                            <img src="{{ url_for('static', filename='images/Project3.png') }}" class="project-img" alt="Club History Website">
+                            <button type="button" class="project-arrow-btn" aria-label="View Club History Website details" data-bs-toggle="modal" data-bs-target="#githubModal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="project-info mt-auto">
+                            <h3 class="project-title">Club History &amp; Fitness Portal</h3>
+                            <p class="project-description">Interactive sports club records, athlete history, and fitness tracking portal with dynamic component rendering.</p>
+                            <div class="project-tags d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill text-bg-dark project-tag">React</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">JavaScript</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">Netlify</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">CSS</span>
+                                <span class="badge rounded-pill text-bg-dark project-tag">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#githubModal">
+                    View More Projects
+                </button>
+            </div>
+
+         
+
+            <!-- Modal -->
+            <div class="modal fade" id="githubModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-start" style="background-color: #112240; border: 1px solid #CDFF03; color: white;">
+                        <div class="modal-header" style="border-bottom-color: #CDFF03;">
+                            <h1 class="modal-title fs-5" id="githubModalLabel" style="color: #CDFF03; font-family: 'DM Sans', sans-serif;">More Projects</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="font-family: 'DM Sans', sans-serif; font-weight: 300;">
+                            To see more of my projects go to <a href="https://github.com/TinoTheGiant" target="_blank" style="color: #CDFF03; font-weight: 500; text-decoration: underline;"><i class="fa-brands fa-github" style="color: #cdff03;">&nbsp;</i>github</a>.
+                        </div>
+                        <div class="modal-footer" style="border-top-color: #CDFF03;">
+                            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+        </section>
+{% endblock %}

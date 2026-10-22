@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+        <!-- The hero title, intro text and skills below are passed in from app.py (PROFILE and SKILLS) -->
+        <section class="hero">
+            <!-- First name is outlined, last name is solid -->
+            <h2 class="hero-name">
+                <span class="hero-name-outline">{{ profile.first_name }}</span>
+                <span class="hero-name-solid">{{ profile.last_name }}</span>
+            </h2>
+
+            <div class="hero-body">
+                <div class="hero-intro">
+                    <h3 class="hero-role">{{ profile.role }}</h3>
+                    <p>
+                        I build web applications with <strong>Python</strong>, <strong>Flask</strong>,
+                        <strong>React</strong> and <strong>C#</strong>, with a focus on distributed
+                        systems and secure networking.
+                    </p>
+                </div>
+
+                <!-- Mirrors the intro on the left; areas come from PROFILE.research_areas -->
+                <div class="hero-research">
+                    <span class="hero-research-label">// research</span>
+                    <p>
+                        Graduate researcher in
+                        {% for area in profile.research_areas -%}
+                            {%- if loop.last %} and {% elif not loop.first %}, {% endif -%}
+                            <strong>{{ area }}</strong>
+                        {%- endfor %}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-summary">
+            <h2>Let me introduce myself</h2>
+            <p>{{ profile.intro }}</p>
+
+            <!-- Skills list rendered by Flask/Jinja: one badge per item in the SKILLS list using Bootstrap Pill badges -->
+            <h3 class="home-skills-title">Core Skills</h3>
+            <div class="home-skills d-flex flex-wrap justify-content-center gap-2 mb-4">
+                {% for skill in skills %}
+                <span class="badge rounded-pill text-bg-dark px-3 py-2 fs-6 fw-semibold">{{ skill }}</span>
+                {% endfor %}
+            </div>
+
+            <a href="{{ url_for('about') }}" class="btn">Learn More</a>
+        </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/greeting.js') }}"></script>
+{% endblock %}

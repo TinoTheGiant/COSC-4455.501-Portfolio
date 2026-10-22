@@ -1,12 +1,13 @@
 // contact form validation script
+// If a required field is empty, stop the submit and show an error.
+// If everything is filled in, let the form POST to the Flask /contact route,
+// which reads the data with request.form and shows the thank-you message.
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
     const formMessages = document.getElementById("formMessages");
 
     if (form) {
         form.addEventListener("submit", function(event) {
-            event.preventDefault();
-
             // Get form fields
             const fname = document.getElementById("fname").value.trim();
             const lname = document.getElementById("lname").value.trim();
@@ -16,14 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Check if required fields are empty
             if (fname === "" || lname === "" || email === "" || date === "" || message === "") {
-                // Display error message
+                // Block the submission and display error message
+                event.preventDefault();
                 formMessages.innerHTML = "<div class='alert alert-danger'>Please fill out all required fields.</div>";
-            } else {
-                // Display success message
-                formMessages.innerHTML = "<div class='alert alert-success'>Thank you! Your message has been sent successfully.</div>";
-                // Optional: reset the form
-                form.reset();
             }
+            // Otherwise do nothing: the browser submits the form to Flask (POST /contact)
         });
     }
 });
